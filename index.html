@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./Todo icon.jpg">
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .content-auto {
+                content-visibility: auto;
+            }
+        }
+    </style>
+    <title>3 dars</title>
+</head>
+<body class="bg-slate-400">
+    
+    <form autocomplete="off" class="todo-form bg-slate-200 rounded-md p-5 w-[500px] mx-auto mt-5">
+        <input class="todo-input w-[80%] p-2 rounded-md outline-none border-[2px] border-white focus:shadow-2xl" type="text" placeholder="Create" name="todo" required>
+        <button type="submit" class="text-center w-[80px] bg-green-500 rounded-md text-white font-semibold p-[9px]">Create</button>
+    </form>
+    <ul class="todo-list space-y-[10px] bg-slate-200 rounded-md p-5 w-[500px] mx-auto mt-5"></ul>
+    
+    <div id="update-modal" class="modal hidden fixed inset-0 bg-gray-600 flex justify-center items-center">
+        <div class="modal-content bg-white p-10 rounded-md shadow-lg">
+            <h2 class="text-2xl mb-4">Update Todo</h2>
+            <input required type="text" id="update-input" class="p-2 border rounded-md w-full mb-4" placeholder="Enter new todo value">
+            <div class="flex justify-end space-x-2">
+                <button id="save-update" class="bg-blue-500 text-white p-2 rounded-md">Save</button>
+                <button id="close-modal" class="bg-gray-500 text-white p-2 rounded-md">Cancel</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="./main.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        clifford: '#da373d',
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>
